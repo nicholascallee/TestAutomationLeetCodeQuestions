@@ -42,23 +42,16 @@ public class Solution {
         return temp.charAt(0);
     }
 
-
     public int[] twoSum(int[] nums, int target){
-        HashMap<String, Integer> mapping = new HashMap<>();
         int[] returner = new int[2];
-        int count = 0;
-        for(int num: nums){
-            if(!mapping.containsKey(num)){
-                mapping.put(String.valueOf(num),count);
-            }
-            if(mapping.containsKey(String.valueOf(target - num))){
-                if(mapping.get(String.valueOf(target - num)) != count) {
-                    returner[0] = mapping.get(String.valueOf(num));
-                    returner[1] = mapping.get(String.valueOf(target - num));
+        for(int i = 0; i < nums.length; i++){
+            for(int j = 0; j < nums.length; j++){
+                if(nums[j] + nums[i] == target && i != j){
+                    returner[0] = j;
+                    returner[1] = i;
                     return returner;
                 }
             }
-            count++;
         }
         return returner;
     }
