@@ -54,6 +54,8 @@ public class LeetCodeTests{
 
     @Test
     public void LeetCodeTestLengthOfLongestSubstring() {
+        //https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+
         assertEquals(mySolution.lengthOfLongestSubstring("abcabcbb"),3);
         assertEquals(mySolution.lengthOfLongestSubstring("bbbbb"),1);
         assertEquals(mySolution.lengthOfLongestSubstring("pwwkew"), 3);
