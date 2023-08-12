@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.HashMap;
 public class Solution {
     public String mergeAlternately(String word1, String word2) {
         if (word1.length() == 1 && word2.length() == 1){
@@ -55,5 +54,9 @@ public class Solution {
         }
         return returner;
     }
+
+
+
+
 
 }
