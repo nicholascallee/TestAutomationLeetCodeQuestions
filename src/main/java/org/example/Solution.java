@@ -1,5 +1,9 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Solution {
     public String mergeAlternately(String word1, String word2) {
         if (word1.length() == 1 && word2.length() == 1){
@@ -55,7 +59,47 @@ public class Solution {
         return returner;
     }
 
+    HashMap<String,Boolean> remember = new HashMap<>();
+    public int lengthOfLongestSubstring(String s) {
+        if (s.length() == 0){
+            return 0;
+        }
+        int longest = 1;
+        for(int i = 0; i < s.length(); i++){
+            for(int j = i+1; j < s.length(); j++) {
+                String currentSubstring = s.substring(i,j+1);
+                if(!containsRepeatingVals(currentSubstring)){
+                    int substringLength = currentSubstring.length();
+                    if(substringLength > longest){
+                        longest = substringLength;
+                    }
+                }
+                else{
+                    // if the substring does contain repeating values then bump i up to j and make j big enough to stop the loop
+                    //i actually needs to go to the index of the first occurrence of the duplicated letter.
+                    i = currentSubstring.indexOf(currentSubstring.charAt(currentSubstring.length()-1))+ i;
+                    j = s.length();
+                }
+            }
+        }
+        return longest;
+    }
 
+    public boolean containsRepeatingVals(String stringVal){
+        if(remember.containsKey(stringVal)){
+            return remember.get(stringVal);
+        }
+        Set<Character> charSet = new HashSet<>();
+        for (char c : stringVal.toCharArray()) {
+            if (charSet.contains(c)) {
+                remember.put(stringVal,true);
+                return true;
+            }
+            charSet.add(c);
+        }
+        remember.put(stringVal,false);
+        return false;
+    }
 
 
 
