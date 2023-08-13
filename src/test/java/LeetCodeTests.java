@@ -92,4 +92,11 @@ public class LeetCodeTests{
         assertEquals(mySolution.maxProfit(intArray),999);
     }
 
+    @Test
+    public void LeetCodeTestPow() throws IOException {
+        assertEquals(mySolution.myPow(2, -2), .25);
+        //assertEquals(mySolution.myPow(34.00515, -3), 0.00003);
+        assertEquals(mySolution.myPow(2, 10), 1024);
+
+    }
 }
