@@ -100,4 +100,14 @@ public class LeetCodeTests{
         //assertEquals(mySolution.myPow(34.00515, -3), 0.00003);
         assertEquals(mySolution.myPow(2, 10), 1024);
     }
+
+    @Test
+    public void LeetCodeTestIsPalindrome(){
+        //https://leetcode.com/problems/palindrome-number/
+        assertEquals(mySolution.isPalindrome(121), true);
+        assertEquals(mySolution.isPalindrome(-121), false);
+        assertEquals(mySolution.isPalindrome(10), false);
+        assertEquals(mySolution.isPalindrome(-101), false);
+    }
+
 }
