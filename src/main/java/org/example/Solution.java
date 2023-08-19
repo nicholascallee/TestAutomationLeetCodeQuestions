@@ -123,7 +123,7 @@ public class Solution {
     public double myPow(double x, int n) {
         double returner = x;
         if(n == 0){
-            return 0;
+            return 1;
         }
         for(int z = 1;z < Math.abs(n);z++){
             returner = returner * x;
