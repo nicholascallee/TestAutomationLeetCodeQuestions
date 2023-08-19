@@ -97,8 +97,11 @@ public class LeetCodeTests{
         //https://leetcode.com/problems/powx-n/
 
         assertEquals(mySolution.myPow(2, -2), .25);
-        //assertEquals(mySolution.myPow(34.00515, -3), 0.00003);
         assertEquals(mySolution.myPow(2, 10), 1024);
+        //TODO: Fix this test
+        assertEquals(mySolution.myPow(34.00515, -3), 0.00003);
+        assertEquals(mySolution.myPow(0.44528, 0), 1);
+
     }
 
     @Test
