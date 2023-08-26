@@ -150,4 +150,9 @@ public class Solution {
     }
 
 
+    public int lengthOfLastWord(String s) {
+        String[] splitValues = s.split(" ");
+        return splitValues[splitValues.length-1].length();
+    }
+
 }
