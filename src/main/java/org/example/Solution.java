@@ -155,4 +155,28 @@ public class Solution {
         return splitValues[splitValues.length-1].length();
     }
 
+
+    public int reverse(int x) {
+        boolean negitive = false;
+        String myInt = Integer.toString(x);
+        if(myInt.charAt(0) == '-'){
+            myInt = myInt.substring(1);
+            negitive = true;
+        }
+        StringBuilder reversed = new StringBuilder(myInt);
+        reversed.reverse();
+        try{
+            int reversedValue = Integer.parseInt(reversed.toString());
+            if(negitive){
+                return -reversedValue;
+            }
+            return reversedValue;
+        }
+        catch(Exception e){
+            return 0;
+        }
+    }
+
+
+
 }

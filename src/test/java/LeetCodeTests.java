@@ -114,13 +114,18 @@ public class LeetCodeTests{
         assertEquals(mySolution.isPalindrome(-101), false);
     }
 
+
     @Test
     public void LeetCodeTestLengthOfLastWord(){
         assertEquals(mySolution.lengthOfLastWord("Hello World"), 5);
         assertEquals(mySolution.lengthOfLastWord("   fly me   to   the moon  "),4);
         assertEquals(mySolution.lengthOfLastWord("luffy is still joyboy"), 6);
-
-
     }
 
+    @Test
+    public void LeetCodeTestReverseInteger(){
+        assertEquals(mySolution.reverse(123),321);
+        assertEquals(mySolution.reverse(-123),-321);
+        assertEquals(mySolution.reverse(120),21);
+    }
 }
