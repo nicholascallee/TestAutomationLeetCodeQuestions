@@ -177,6 +177,80 @@ public class Solution {
         }
     }
 
+    public int maxProfit2(int[] prices) {
+        //if min of prices is before max of prices, return  max - min
+        // else
+        //remove the max and call maxProfit again.
 
+        int min = 99999999;
+        int minIdx = 0;
+        int max = 0;
+        int maxIdx = 0;
+        int count = 0;
+        for(int price: prices){
+            if (price > max){
+                max = price;
+                maxIdx = count;
+            }
+            if (price < min){
+                min = price;
+                minIdx = count;
+            }
+            count++;
+        }
+        if (minIdx < maxIdx){
+            return max - min;
+        }
+        else{
+            int[] newPrices = removeTheElement(prices,maxIdx);
+            return maxProfit2(newPrices);
+        }
+    }
+
+    public static int[] removeTheElement(int[] arr, int index)
+    {
+
+        // If the array is empty
+        // or the index is not in array range
+        // return the original array
+        if (arr == null || index < 0
+                || index >= arr.length) {
+
+            return arr;
+        }
+
+        // Create another array of size one less
+        int[] anotherArray = new int[arr.length - 1];
+
+        // Copy the elements except the index
+        // from original array to the other array
+        for (int i = 0, k = 0; i < arr.length; i++) {
+
+            // if the index is
+            // the removal element index
+            if (i == index) {
+                continue;
+            }
+
+            // if the index is not
+            // the removal element index
+            anotherArray[k++] = arr[i];
+        }
+
+        // return the resultant array
+        return anotherArray;
+    }
+
+
+    public int removeElement(int[] nums, int val) {
+        int newIndexBuilder = 0;
+        for(int x = 0; x < nums.length; x++){
+            if (nums[x] != val){
+                nums[newIndexBuilder] = nums[x];
+                newIndexBuilder += 1;
+            }
+        }
+        return newIndexBuilder;
+    }
 
 }

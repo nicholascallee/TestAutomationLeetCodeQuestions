@@ -128,4 +128,20 @@ public class LeetCodeTests{
         assertEquals(mySolution.reverse(-123),-321);
         assertEquals(mySolution.reverse(120),21);
     }
+
+    @Test
+   public void LeetCodeTestMaxProfit2(){
+        int[] test1 =  {7,1,5,3,6,4};
+        assertEquals(mySolution.maxProfit2(test1),5);
+    }
+
+
+
+    @Test
+    public void LeetCodeTestRemoveElement(){
+        int[] test1 = {0,1,2,2,3,0,4,2};
+        int[] test2 = {3,2,2,3};
+        assertEquals(mySolution.removeElement(test1,2),5);
+        assertEquals(mySolution.removeElement(test2,3),2);
+    }
 }
