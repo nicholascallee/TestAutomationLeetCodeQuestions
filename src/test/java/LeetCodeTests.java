@@ -144,4 +144,14 @@ public class LeetCodeTests{
         assertEquals(mySolution.removeElement(test1,2),5);
         assertEquals(mySolution.removeElement(test2,3),2);
     }
+
+
+    @Test
+    public void LeetCodeTestClimbStairs(){
+        assertEquals(mySolution.climbStairs(3),3);
+        assertEquals(mySolution.climbStairs(15),987);
+        assertEquals(mySolution.climbStairs(32),3524578);
+        assertEquals(mySolution.climbStairs(45),1836311903);
+    }
+
 }
