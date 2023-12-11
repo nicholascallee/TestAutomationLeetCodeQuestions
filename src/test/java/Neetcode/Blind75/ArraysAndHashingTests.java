@@ -43,11 +43,17 @@ public class ArraysAndHashingTests {
                 correct
         );
 
-
-        correct[0]= 0; correct[1] = 1;
+        // generate input values again
         int[] inputer2 = new int[2];
         inputer2[0] = 3; inputer2[1] = 3;
+
+        // generate correct answer if target value is 6 again
+        correct[0]= 0; correct[1] = 1;
+
+        //call the twoSum method with the input value and target value of 6
         assertMe = mySolution.TwoSum(inputer2, 6);
+
+        // assert that they are equal... even if the returned values are flipped.
         assertEquals(
                 assertMe[0] != correct[0] ? new int[]{assertMe[1], assertMe[0]} : assertMe,
                 correct
@@ -61,8 +67,8 @@ public class ArraysAndHashingTests {
         int[] input3 = new int[]{1,1,1,3,3,4,3,2,4,2};
         int[] input4 = new int[]{0};
 
-        assertEquals( mySolution.ContainsDuplicate(input1),false);
-        assertEquals( mySolution.ContainsDuplicate(input2),true);
+        assertEquals( mySolution.ContainsDuplicate(input1),true);
+        assertEquals( mySolution.ContainsDuplicate(input2),false);
         assertEquals( mySolution.ContainsDuplicate(input3),true);
         assertEquals( mySolution.ContainsDuplicate(input4),false);
 
