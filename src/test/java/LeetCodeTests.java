@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import static org.testng.Assert.assertEquals;
-
+// I picked these tests. They are in no particular order.
 public class LeetCodeTests{
     Solution mySolution = null;
     Properties properties = null;
@@ -153,5 +153,8 @@ public class LeetCodeTests{
         assertEquals(mySolution.climbStairs(32),3524578);
         assertEquals(mySolution.climbStairs(45),1836311903);
     }
-
+    @Test
+    public void LeetCodeTestSimplifyPath(){
+        assertEquals(mySolution.simplifyPath("/test/"),"/test");
+    }
 }

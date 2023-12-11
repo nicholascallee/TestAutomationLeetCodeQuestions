@@ -262,4 +262,17 @@ public class Solution {
     }
 
 
+    public String simplifyPath(String path) {
+
+
+        if(path.substring(path.length()-1,path.length()).equals("/"))
+        {
+            path = path.substring(0, path.length() - 1);
+        }
+        path = path.replace("/../", "/").replaceAll("/+", "/");
+
+        return path;
+    }
+
+
 }
