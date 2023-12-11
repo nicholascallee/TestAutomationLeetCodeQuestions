@@ -2,6 +2,7 @@ package org.example.Neetcode.Blind75;
 
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ArraysAndHashing {
@@ -72,5 +73,8 @@ public class ArraysAndHashing {
             }
         }
         return true;
+    }
+    public List<List<String>> GroupAnagrams(String[] strs) {
+
     }
 }

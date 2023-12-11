@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Properties;
+import java.util.*;
 
 import static org.testng.Assert.assertEquals;
 
@@ -80,5 +80,29 @@ public class ArraysAndHashingTests {
         assertEquals(mySolution.IsAnagram("rat", "car"), false);
         assertEquals(mySolution.IsAnagram("anffagram", "nagaram"), false);
         assertEquals(mySolution.IsAnagram("r", "r"), true);
+    }
+
+
+
+    @Test
+    public void ArraysAndHashingTestGroupAnagrams() {
+
+        List<List<String>> actual = mySolution.GroupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
+
+        List<List<String>> expected = new ArrayList<>();
+        expected.add(Arrays.asList("bat"));
+        expected.add(Arrays.asList("nat", "tan"));
+        expected.add(Arrays.asList("ate", "eat", "tea"));
+
+        // Sort the inner lists
+        actual.forEach(Collections::sort);
+        expected.forEach(Collections::sort);
+
+        // Sort the outer lists based on the contents of the first element
+        actual.sort(Comparator.comparing(a -> a.get(0)));
+        expected.sort(Comparator.comparing(a -> a.get(0)));
+
+        assertEquals(expected, actual);
+
     }
 }
