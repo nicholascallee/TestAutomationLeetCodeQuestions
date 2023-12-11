@@ -1,9 +1,6 @@
 package org.example.Neetcode.Blind75;
 
-import java.util.Dictionary;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ArraysAndHashing {
     public int[] TwoSum(int[] nums, int target){
@@ -75,6 +72,23 @@ public class ArraysAndHashing {
         return true;
     }
     public List<List<String>> GroupAnagrams(String[] strs) {
+        // change the value type of the map to a list of strings and directly add that value. then u can return them eaiser
+        Map<String, Integer> distinctAnagramCounts = new HashMap<>();
+        for(String string: strs){
+            char[] chars = string.toCharArray();
+            Arrays.sort(chars);
+            String sortedString = new String(chars);
+            if(distinctAnagramCounts.containsKey(sortedString)){
+                distinctAnagramCounts.put(sortedString, distinctAnagramCounts.get(sortedString) + 1);
+            }
+            else {
+                distinctAnagramCounts.put(sortedString,1);
+            }
+
+
+        }
+
+        }
 
     }
 }
