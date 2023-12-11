@@ -37,7 +37,7 @@ public class ArraysAndHashingTests {
         correct[0]= 2; correct[1] = 1;
 
         //call the twoSum method with the input value and target value of 6
-        int[] assertMe = mySolution.twoSum(inputer, 6);
+        int[] assertMe = mySolution.TwoSum(inputer, 6);
         assertEquals(
                 assertMe[0] != correct[0] ? new int[]{assertMe[1], assertMe[0]} : assertMe,
                 correct
@@ -47,11 +47,25 @@ public class ArraysAndHashingTests {
         correct[0]= 0; correct[1] = 1;
         int[] inputer2 = new int[2];
         inputer2[0] = 3; inputer2[1] = 3;
-        assertMe = mySolution.twoSum(inputer2, 6);
+        assertMe = mySolution.TwoSum(inputer2, 6);
         assertEquals(
                 assertMe[0] != correct[0] ? new int[]{assertMe[1], assertMe[0]} : assertMe,
                 correct
         );
+    }
+
+    @Test
+    public void ArraysAndHashingTestContainsDuplicate() {
+        int[] input1 = new int[]{1,2,3,1};
+        int[] input2 = new int[]{1,2,3,4};
+        int[] input3 = new int[]{1,1,1,3,3,4,3,2,4,2};
+        int[] input4 = new int[]{0};
+
+        assertEquals( mySolution.ContainsDuplicate(input1),false);
+        assertEquals( mySolution.ContainsDuplicate(input2),true);
+        assertEquals( mySolution.ContainsDuplicate(input3),true);
+        assertEquals( mySolution.ContainsDuplicate(input4),false);
+
     }
 
 }

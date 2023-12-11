@@ -1,7 +1,7 @@
 package org.example.Neetcode.Blind75;
 
 public class ArraysAndHashing {
-    public int[] twoSum(int[] nums, int target){
+    public int[] TwoSum(int[] nums, int target){
         int[] returner = new int[2];
         for(int i = 0; i < nums.length; i++){
             for(int j = 0; j < nums.length; j++){
@@ -15,5 +15,7 @@ public class ArraysAndHashing {
         return returner;
     }
 
-    public
+    public Boolean ContainsDuplicate(int[] nums){
+        return false;
+    }
 }
