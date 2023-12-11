@@ -74,4 +74,11 @@ public class ArraysAndHashingTests {
 
     }
 
+    @Test
+    public void ArraysAndHashingTestIsAnagram() {
+        assertEquals(mySolution.IsAnagram("anagram", "nagaram"), true);
+        assertEquals(mySolution.IsAnagram("rat", "car"), false);
+        assertEquals(mySolution.IsAnagram("anffagram", "nagaram"), false);
+        assertEquals(mySolution.IsAnagram("r", "r"), true);
+    }
 }
