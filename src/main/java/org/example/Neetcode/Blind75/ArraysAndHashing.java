@@ -72,21 +72,23 @@ public class ArraysAndHashing {
         return true;
     }
     public List<List<String>> GroupAnagrams(String[] strs) {
-        // change the value type of the map to a list of strings and directly add that value. then u can return them eaiser
-        Map<String, Integer> distinctAnagramCounts = new HashMap<>();
+        // change the value type of the map to a list of strings and directly add that value. then u can return them easier
+        Map<String, String[]> distinctAnagramCounts = new HashMap<>();
         for(String string: strs){
             char[] chars = string.toCharArray();
             Arrays.sort(chars);
             String sortedString = new String(chars);
             if(distinctAnagramCounts.containsKey(sortedString)){
-                distinctAnagramCounts.put(sortedString, distinctAnagramCounts.get(sortedString) + 1);
+                String[] newArray = Arrays.copyOf(distinctAnagramCounts.get(sortedString), distinctAnagramCounts.get(sortedString).length + 1);
+                newArray[distinctAnagramCounts.get(sortedString).length] = string;
+                distinctAnagramCounts.put(sortedString, newArray);
             }
             else {
-                distinctAnagramCounts.put(sortedString,1);
+                distinctAnagramCounts.put(sortedString,new String[]{string});
             }
-
-
         }
+        List<String[]> valuesList = new ArrayList<>(distinctAnagramCounts.values());
+
 
         }
 
