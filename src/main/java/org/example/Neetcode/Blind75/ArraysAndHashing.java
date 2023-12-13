@@ -104,6 +104,16 @@ public class ArraysAndHashing {
 
 
     public int[] topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> numberCounts = new HashMap<>();
+        for(int num :nums){
+            if(numberCounts.containsKey(num)){
+                numberCounts.put(num, numberCounts.get(num) + 1);
+            }
+            else{
+                numberCounts.put(num,1);
+            }
+        }
+        // go through hashmap and find the top k occuring values
 
     }
 }
