@@ -1,6 +1,7 @@
 package org.example.Neetcode.Blind75;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class ArraysAndHashing {
     public int[] TwoSum(int[] nums, int target){
@@ -113,7 +114,22 @@ public class ArraysAndHashing {
                 numberCounts.put(num,1);
             }
         }
-        // go through hashmap and find the top k occuring values
+
+        Comparator<Entry<Integer, Integer>> byValueDesc = (a, b) -> Integer.compare(b.getValue(), a.getValue());
+
+        // sort the keys by value decending into a list
+        List<Integer> sortedKeys = numberCounts.entrySet().stream()
+                .sorted(byValueDesc)
+                .map(Entry::getKey)
+                .toList();
+
+        int[] sortedKeysArray = new int[sortedKeys.size()];
+        for (int i = 0; i < sortedKeys.size(); i++) {
+            sortedKeysArray[i] = sortedKeys.get(i);
+        }
+        return Arrays.copyOfRange(sortedKeysArray, 0, k);
+
+
 
     }
 }
