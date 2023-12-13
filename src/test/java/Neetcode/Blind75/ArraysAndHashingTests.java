@@ -103,6 +103,16 @@ public class ArraysAndHashingTests {
         expected.sort(Comparator.comparing(a -> a.get(0)));
 
         assertEquals(expected, actual);
+    }
 
+    @Test
+    public void ArraysAndHashingTestTopKFrequent() {
+        int[] correctResult = new int[]{1,2};
+        int[] result = mySolution.topKFrequent(new int[]{1,1,1,2,2,3},2);
+        assertEquals(result,correctResult);
+
+        int[] correctResult2 = new int[]{1};
+        int[] result2 = mySolution.topKFrequent(new int[]{1},1);
+        assertEquals(result2,correctResult2);
     }
 }
