@@ -74,10 +74,14 @@ public class ArraysAndHashing {
     public List<List<String>> GroupAnagrams(String[] strs) {
         // change the value type of the map to a list of strings and directly add that value. then u can return them easier
         Map<String, String[]> distinctAnagramCounts = new HashMap<>();
+
+        //iterate through the strings
         for(String string: strs){
+            //sort the string
             char[] chars = string.toCharArray();
             Arrays.sort(chars);
             String sortedString = new String(chars);
+            //add it to a hashmap
             if(distinctAnagramCounts.containsKey(sortedString)){
                 String[] newArray = Arrays.copyOf(distinctAnagramCounts.get(sortedString), distinctAnagramCounts.get(sortedString).length + 1);
                 newArray[distinctAnagramCounts.get(sortedString).length] = string;
@@ -87,10 +91,19 @@ public class ArraysAndHashing {
                 distinctAnagramCounts.put(sortedString,new String[]{string});
             }
         }
-        List<String[]> valuesList = new ArrayList<>(distinctAnagramCounts.values());
+        //return a list of lists of strings from the values of all keys in the hashmap
+        List<List<String>> valuesList = new ArrayList<>();
 
-
+        // Loop through the map and add the values to the list of lists
+        for (String[] values : distinctAnagramCounts.values()) {
+            List<String> innerList = new ArrayList<>(List.of(values));
+            valuesList.add(innerList);
         }
+        return valuesList;
+    }
+
+
+    public int[] topKFrequent(int[] nums, int k) {
 
     }
 }
