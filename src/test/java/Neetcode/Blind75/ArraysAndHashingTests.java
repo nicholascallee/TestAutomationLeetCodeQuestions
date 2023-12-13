@@ -115,4 +115,16 @@ public class ArraysAndHashingTests {
         int[] result2 = mySolution.topKFrequent(new int[]{1},1);
         assertEquals(result2,correctResult2);
     }
+
+
+    @Test
+    public void ArraysAndHashingTestProductExceptSelf() {
+        int[] result1 = mySolution.productExceptSelf(new int[]{1,2,3,4});
+        int[] correctValues1 = new int[]{24,12,8,6};
+        assertEquals(result1,correctValues1);
+
+        int[] result2 = mySolution.productExceptSelf(new int[]{1,2,3,4});
+        int[] correctValues2 = new int[]{24,12,8,6};
+        assertEquals(result2,correctValues2);
+    }
 }

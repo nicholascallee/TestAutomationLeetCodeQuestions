@@ -128,8 +128,9 @@ public class ArraysAndHashing {
             sortedKeysArray[i] = sortedKeys.get(i);
         }
         return Arrays.copyOfRange(sortedKeysArray, 0, k);
-
-
+    }
+    public int[] productExceptSelf(int[] nums) {
 
     }
+
 }
