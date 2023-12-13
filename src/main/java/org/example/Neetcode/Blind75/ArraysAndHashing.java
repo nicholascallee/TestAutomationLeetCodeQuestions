@@ -131,6 +131,43 @@ public class ArraysAndHashing {
     }
     public int[] productExceptSelf(int[] nums) {
 
+        int product;
+        int[] toTheLeft;
+        int[] leftArray = new int[nums.length];
+        leftArray[0] = 1;
+        for(int i = 1; i < nums.length; i++){
+
+            leftArray[i] = leftArray[i-1] * nums[i-1];
+
+
+
+
+
+            toTheLeft = Arrays.copyOfRange(nums,0,i);
+            product = 1;
+            for (int k : toTheLeft) {
+                product *= k;
+            }
+            leftArray[i] = product;
+        }
+
+        int[] toTheRight;
+        int[] rightArray = new int[nums.length];
+        rightArray[rightArray.length-1] = 1;
+        for(int k = rightArray.length - 2; k >= 0; k--){
+            toTheRight = Arrays.copyOfRange(nums,k+1,rightArray.length);
+            product = 1;
+            for (int i : toTheRight) {
+                product *= i;
+            }
+            rightArray[k] = product;
+        }
+
+        int[] returner = new int[nums.length];
+        for(int l = 0; l < rightArray.length; l++){
+            returner[l] = rightArray[l] * leftArray[l];
+        }
+        return returner;
     }
 
 }
