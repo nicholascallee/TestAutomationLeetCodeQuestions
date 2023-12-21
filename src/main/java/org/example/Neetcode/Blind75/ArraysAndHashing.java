@@ -157,11 +157,17 @@ public class ArraysAndHashing {
         }
         for(int num2: nums){
             if(!numsHashSet.contains(num2 - 1)){
+                int currentNum = num2;
+                int currentLength = 1;
                 // start of new sequence
-            }
-            else{
-                // next iteration of a sequence
+                while(numsHashSet.contains(currentNum + 1)){
+                    currentLength++;
+                    currentNum++;
+                }
+
+                maxLength = Math.max(maxLength,currentLength);
             }
         }
+        return maxLength;
     }
 }
