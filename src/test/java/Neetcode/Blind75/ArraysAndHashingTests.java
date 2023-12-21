@@ -3,26 +3,15 @@ package Neetcode.Blind75;
 import org.example.Neetcode.Blind75.ArraysAndHashing;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
 import static org.testng.Assert.assertEquals;
 
 public class ArraysAndHashingTests {
     ArraysAndHashing mySolution = null;
-//    Properties properties = null;
     @BeforeClass
-    public void beforeClass() throws IOException {
+    public void beforeClass(){
         mySolution = new ArraysAndHashing();
-//        properties = new Properties();
-//        InputStream inputStream = getClass().getResourceAsStream("customTestingData.properties");
-//        if (inputStream == null) {
-//            throw new FileNotFoundException("customTestingData.properties not found");
-//        }
-//        properties.load(inputStream);
     }
     @Test
     public void ArraysAndHashingTestTwoSum() {
@@ -62,6 +51,7 @@ public class ArraysAndHashingTests {
 
     @Test
     public void ArraysAndHashingTestContainsDuplicate() {
+        //https://leetcode.com/problems/contains-duplicate/description/
         int[] input1 = new int[]{1,2,3,1};
         int[] input2 = new int[]{1,2,3,4};
         int[] input3 = new int[]{1,1,1,3,3,4,3,2,4,2};
@@ -76,6 +66,7 @@ public class ArraysAndHashingTests {
 
     @Test
     public void ArraysAndHashingTestIsAnagram() {
+        //https://leetcode.com/problems/valid-anagram/description/
         assertEquals(mySolution.IsAnagram("anagram", "nagaram"), true);
         assertEquals(mySolution.IsAnagram("rat", "car"), false);
         assertEquals(mySolution.IsAnagram("anffagram", "nagaram"), false);
@@ -86,6 +77,7 @@ public class ArraysAndHashingTests {
 
     @Test
     public void ArraysAndHashingTestGroupAnagrams() {
+        //https://leetcode.com/problems/group-anagrams/description/
 
         List<List<String>> actual = mySolution.GroupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
 
@@ -107,6 +99,7 @@ public class ArraysAndHashingTests {
 
     @Test
     public void ArraysAndHashingTestTopKFrequent() {
+        //https://leetcode.com/problems/top-k-frequent-elements/
         int[] correctResult = new int[]{1,2};
         int[] result = mySolution.topKFrequent(new int[]{1,1,1,2,2,3},2);
         assertEquals(result,correctResult);
@@ -119,6 +112,7 @@ public class ArraysAndHashingTests {
 
     @Test
     public void ArraysAndHashingTestProductExceptSelf() {
+        //https://leetcode.com/problems/product-of-array-except-self/description/
         int[] result1 = mySolution.productExceptSelf(new int[]{1,2,3,4});
         int[] correctValues1 = new int[]{24,12,8,6};
         assertEquals(result1,correctValues1);
@@ -130,6 +124,7 @@ public class ArraysAndHashingTests {
 
     @Test
     public void ArraysAndHashingTestLongestConsecutive() {
+        //https://leetcode.com/problems/longest-consecutive-sequence/
         int result1 = mySolution.longestConsecutive(new int[]{1, 2, 3, 4});
         int correctValue1 = 4;
         assertEquals(result1, correctValue1);
