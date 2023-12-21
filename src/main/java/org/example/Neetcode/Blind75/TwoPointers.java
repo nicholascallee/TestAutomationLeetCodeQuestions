@@ -115,6 +115,15 @@ public class TwoPointers {
 
     public int maxProfitTwoPointersApproach(int[] prices) {
         int maxProfit = 0;
+        int left = 0;
+        int right = prices.length -1;
+
+        while(left < right){
+            if(prices[right] - prices[left] > maxProfit){
+                maxProfit = prices[right] - prices[left];
+            }
+        }
+
         return maxProfit;
     }
 }
