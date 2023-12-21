@@ -71,8 +71,29 @@ public class TwoPointers {
 
 
     public int maxArea(int[] height) {
-
-
+        int left = 0;
+        int right = height.length -1;
+        int maxArea = 0;
+        int width;
+        int shorterHeight;
+        int heightLeft;
+        int heightRight;
+        while(left < right){
+            width = right - left;
+            heightLeft = height[left];
+            heightRight = height[right];
+            shorterHeight = Math.min(heightLeft,heightRight);
+            if(shorterHeight * width > maxArea){
+                maxArea = shorterHeight * width;
+            }
+            if(heightLeft > heightRight){
+                right--;
+            }
+            else{
+                left ++;
+            }
+        }
+        return maxArea;
 
     }
 }
