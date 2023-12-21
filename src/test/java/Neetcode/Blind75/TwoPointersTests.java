@@ -57,4 +57,13 @@ public class TwoPointersTests {
         assertEquals(correctValue2,mySolution.threeSum(new int[]{0,0,0}));
         assertEquals(correctValue3,mySolution.threeSum(new int[]{1,-1,-1,0}));
     }
+
+    @Test
+    public void TwoPointersTestMaxArea() {
+        assertEquals(mySolution.maxArea(new int[]{1,8,6,2,5,4,8,3,7}),49);
+        assertEquals(mySolution.maxArea(new int[]{1,1}),1);
+    }
+
+
+
 }

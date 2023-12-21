@@ -68,4 +68,11 @@ public class TwoPointers {
         }
         return returner;
     }
+
+
+    public int maxArea(int[] height) {
+
+
+
+    }
 }
