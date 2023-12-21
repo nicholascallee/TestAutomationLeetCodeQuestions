@@ -67,6 +67,18 @@ public class TwoPointersTests {
         assertEquals(mySolution.maxArea(new int[]{1,8,6,2,5,4,8,3,7}),49);
         assertEquals(mySolution.maxArea(new int[]{1,1}),1);
     }
+    @Test
+    public void TwoPointersTestMaxProfit() {
+        //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+        assertEquals(mySolution.maxProfit(new int[]{7,1,5,3,6,4}),5);
+        assertEquals(mySolution.maxProfit(new int[]{7,6,4,3,1}),0);
+    }
+    @Test
+    public void TwoPointersTestMaxProfitTwoPointersApproach() {
+        //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+        assertEquals(mySolution.maxProfitTwoPointersApproach(new int[]{7,1,5,3,6,4}),5);
+        assertEquals(mySolution.maxProfitTwoPointersApproach(new int[]{7,6,4,3,1}),0);
+    }
 
 
 

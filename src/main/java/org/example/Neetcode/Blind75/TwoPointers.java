@@ -94,6 +94,27 @@ public class TwoPointers {
             }
         }
         return maxArea;
+    }
 
+    public int maxProfit(int[] prices) {
+        int maxProfit = 0;
+        int potentialProfit = 0;
+        for(int i = 0; i < prices.length; i++){
+            for(int j = i+1; j < prices.length; j++){
+                potentialProfit = prices[j] - prices[i];
+                if(potentialProfit > maxProfit){
+                    maxProfit = potentialProfit;
+                }
+            }
+            if(prices[i] == 0){
+                i = prices.length;
+            }
+        }
+        return maxProfit;
+    }
+
+    public int maxProfitTwoPointersApproach(int[] prices) {
+        int maxProfit = 0;
+        return maxProfit;
     }
 }
