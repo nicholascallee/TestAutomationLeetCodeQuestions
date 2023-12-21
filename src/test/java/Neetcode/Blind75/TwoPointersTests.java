@@ -16,4 +16,11 @@ public class TwoPointersTests {
         assertFalse(mySolution.isPalindrome("race a car"));
         assertTrue(mySolution.isPalindrome(" "));
     }
+    @Test
+    public void TwoPointersTestIsPalindromeTwoPointersApproach() {
+        assertTrue(mySolution.isPalindromeTwoPointersApproach("racecar"));
+        assertTrue(mySolution.isPalindromeTwoPointersApproach("A man, a plan, a canal: Panama"));
+        assertFalse(mySolution.isPalindromeTwoPointersApproach("race a car"));
+        assertTrue(mySolution.isPalindromeTwoPointersApproach(" "));
+    }
 }
