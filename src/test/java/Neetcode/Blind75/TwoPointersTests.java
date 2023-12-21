@@ -47,7 +47,20 @@ public class TwoPointersTests {
         triplet3.add(0);
         correctValue2.add(triplet3);
 
+
+        List<List<Integer>> correctValue3 = new ArrayList<>();
+        List<Integer> triplet4 = new ArrayList<>();
+        triplet4.add(-1);
+        triplet4.add(0);
+        triplet4.add(1);
+        correctValue3.add(triplet4);
+
+
+
+
         assertEquals(correctValue,mySolution.threeSum(new int[]{-1,0,1,2,-1,-4}));
         assertEquals(correctValue2,mySolution.threeSum(new int[]{0,0,0}));
+        assertEquals(correctValue3,mySolution.threeSum(new int[]{1,-1,-1,0}));
+
     }
 }

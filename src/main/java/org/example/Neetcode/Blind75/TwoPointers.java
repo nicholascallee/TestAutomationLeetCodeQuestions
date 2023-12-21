@@ -38,12 +38,11 @@ public class TwoPointers {
         List<List<Integer>> returner = new ArrayList<>();
         Arrays.sort(nums);
 
-        for(int x =0; x < nums.length; x++){
+        for(int x =0; x < nums.length -2; x++){
             if(x > 0 && nums[x] == nums[x-1]){
                 continue;
             }
-
-            int left = 0;
+            int left = x + 1;
             int right = nums.length -1;
 
             while(left < right){
@@ -59,7 +58,7 @@ public class TwoPointers {
                         right--;
                     }
                 }
-                else if (0 <= nums[x] + nums[left] + nums[right]){
+                else if (0 > nums[x] + nums[left] + nums[right]){
                     left++;
                 }
                 else{
