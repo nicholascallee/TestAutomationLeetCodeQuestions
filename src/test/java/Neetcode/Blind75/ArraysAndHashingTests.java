@@ -127,4 +127,16 @@ public class ArraysAndHashingTests {
         int[] correctValues2 = new int[]{24,12,8,6};
         assertEquals(result2,correctValues2);
     }
+
+    @Test
+    public void ArraysAndHashingTestLongestConsecutive() {
+        int result1 = mySolution.longestConsecutive(new int[]{1, 2, 3, 4});
+        int correctValue1 = 4;
+        assertEquals(result1, correctValue1);
+
+
+        int result2 = mySolution.longestConsecutive(new int[]{0,3,7,2,5,8,4,6,0,1});
+        int correctValue2 = 9;
+        assertEquals(result2, correctValue2);
+    }
 }
