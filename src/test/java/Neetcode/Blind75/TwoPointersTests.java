@@ -13,6 +13,7 @@ public class TwoPointersTests {
 
     @Test
     public void TwoPointersTestIsPalindrome() {
+        //https://leetcode.com/problems/valid-palindrome/description/
         assertTrue(mySolution.isPalindrome("racecar"));
         assertTrue(mySolution.isPalindrome("A man, a plan, a canal: Panama"));
         assertFalse(mySolution.isPalindrome("race a car"));
@@ -20,6 +21,7 @@ public class TwoPointersTests {
     }
     @Test
     public void TwoPointersTestIsPalindromeTwoPointersApproach() {
+        //https://leetcode.com/problems/valid-palindrome/description/
         assertTrue(mySolution.isPalindromeTwoPointersApproach("racecar"));
         assertTrue(mySolution.isPalindromeTwoPointersApproach("A man, a plan, a canal: Panama"));
         assertFalse(mySolution.isPalindromeTwoPointersApproach("race a car"));
@@ -27,6 +29,7 @@ public class TwoPointersTests {
     }
     @Test
     public void TwoPointersTestThreeSum() {
+        //https://leetcode.com/problems/3sum/description/
         List<List<Integer>> correctValue = new ArrayList<>();
         List<Integer> triplet1 = new ArrayList<>();
         List<Integer> triplet2 = new ArrayList<>();
@@ -60,6 +63,7 @@ public class TwoPointersTests {
 
     @Test
     public void TwoPointersTestMaxArea() {
+        //https://leetcode.com/problems/container-with-most-water/description/
         assertEquals(mySolution.maxArea(new int[]{1,8,6,2,5,4,8,3,7}),49);
         assertEquals(mySolution.maxArea(new int[]{1,1}),1);
     }
